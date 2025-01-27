@@ -1,0 +1,38 @@
+問1
+Sitch3
+
+
+問2
+Switch1:F0/2:RP F0/1:DP
+Switch2:F0/1:RP E0/2:BP
+Switch3:E0/1:DP E0/2:DP
+Switch4:E0/2:RP E0/1:DP
+
+
+ルートポートの選出
+FastEthernet:100Mbps
+Ethernet:10Mbps
+
+一番小さいルートパスコストを求める
+
+Switch1-Switch3:100
+Switch1のF0/2がRP
+
+Switch2-Switch1-Switch3:19+100
+Switch2のF0/1がRP
+
+Switch4-Switch3:100+19
+Switch4のE0/2がRP
+
+
+指定ポートの選出
+Switch3はルートブリッジなので、E0/1とE0/2がDP
+
+ルートポートの対抗ポートは必ず指定ポートになるので、
+Switch1のF0/1はDP
+Switch4のE0/1はDPとなる
+
+ブロッキングポートの選出
+最後に何の役割も与えられていないSwitch2のE0/2がBPとなる
+
+
